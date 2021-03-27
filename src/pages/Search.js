@@ -29,7 +29,10 @@ class Search extends Component {
       const filter = event.target.value;
       const filteredList = this.state.employees.filter(item => {
         let values = item.name.first.toLowerCase();
-        return values.indexOf(filter.toLowerCase()) !== -1;
+        return (values.indexOf(filter.toLowerCase()) !== -1)
+          || (item.name.last.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
+          || (item.phone.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
+          || (item.email.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
       });
   
       this.setState({filtered: filteredList});
@@ -42,14 +45,9 @@ class Search extends Component {
 
   sortField = (field) => {
     var sortList;
-    console.log("field = " + field);
     sortList = this.state.filtered.sort((a, b) => {
-
-      console.log(a[field].localeCompare(b[field]));
       return a[field].localeCompare(b[field])
     })
-
-    console.log("sortlist" + sortList);
 
     this.setState({filtered: sortList});
   }
