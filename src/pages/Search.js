@@ -13,11 +13,10 @@ class Search extends Component {
     error: ""
   };
 
-  // When the component mounts, get a list of all available base breeds and update this.state.breeds
+  // When the component mounts, get a list of all available employees and update this.state.employees and also this.state.filtered
   componentDidMount() {
     API.getEmployees()
       .then(res => {
-        console.log(res.data.results)
         this.setState({ employees: res.data.results})
         this.setState({ filtered: res.data.results})
       })
@@ -32,16 +31,28 @@ class Search extends Component {
         let values = item.name.first.toLowerCase();
         return values.indexOf(filter.toLowerCase()) !== -1;
       });
-  //console.log("filtered list = " + filteredList)
   
       this.setState({filtered: filteredList});
       console.log(this.state.filtered);
     }
     else {
       this.setState({filtered: this.state.employees});
-//      this.state.filtered = this.state.employees;
     }
   };
+
+  sortField = (field) => {
+    var sortList;
+    console.log("field = " + field);
+    sortList = this.state.filtered.sort((a, b) => {
+
+      console.log(a[field].localeCompare(b[field]));
+      return a[field].localeCompare(b[field])
+    })
+
+    console.log("sortlist" + sortList);
+
+    this.setState({filtered: sortList});
+  }
 
   render() {
     return (
@@ -50,7 +61,9 @@ class Search extends Component {
           <SearchForm
             handleInputChange={this.handleInputChange}
           />
-          <Card results={this.state.filtered} />
+          <Card
+            sortField = {this.sortField} 
+            results={this.state.filtered} />
         </Container>
       </div>
     );

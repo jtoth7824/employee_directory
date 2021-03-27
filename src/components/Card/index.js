@@ -8,12 +8,10 @@ function Card(props) {
         <thead>
           <tr>
             <th>Pic</th>
-            <th>First Name</th>
+            <th><span onClick={() => props.sortField("first")}>First Name</span></th>
             <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>City</th>
-            <th>Country</th>
+            <th><span onClick={() => props.sortField("email")}>Email</span></th>
+            <th><span onClick={() => props.sortField("phone")}>Phone</span></th>
           </tr>
         </thead>
       {props.results.map(result => (
@@ -23,8 +21,7 @@ function Card(props) {
             <td><p>{result.name.first}  </p></td>
             <td><p>{result.name.last}   </p></td>
             <td><p>{result.email}   </p></td>
-            <td><p>{result.location.city}</p></td>
-            <td><p>{result.location.country}</p></td>
+            <td><p>{result.phone}   </p></td>
           </tr>
         </tbody>
       ))}
