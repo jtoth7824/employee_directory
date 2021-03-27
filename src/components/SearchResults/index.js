@@ -6,8 +6,6 @@ function SearchResults(props) {
   console.log(props);
   return (
     <Card results={this.props} />
-
-
   );
 }
 
