@@ -9,7 +9,7 @@ function Card(props) {
           <tr>
             <th>Pic</th>
             <th><span onClick={() => props.sortField("first")}>First Name</span></th>
-            <th>Last Name</th>
+            <th><span onClick={() => props.sortField("last")}>Last Name</span></th>
             <th><span onClick={() => props.sortField("email")}>Email</span></th>
             <th><span onClick={() => props.sortField("phone")}>Phone</span></th>
           </tr>
@@ -17,7 +17,7 @@ function Card(props) {
       {props.results.map(result => (
         <tbody key={result.cell}>
           <tr>
-            <td><img src={result.picture.medium} /></td>
+            <td><img src={result.picture.medium} alt="employee pic"/></td>
             <td><p>{result.name.first}  </p></td>
             <td><p>{result.name.last}   </p></td>
             <td><p>{result.email}   </p></td>
