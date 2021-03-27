@@ -2,16 +2,14 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
-// import SearchResults from "../components/SearchResults";
-// import Alert from "../components/Alert";
 import Card from "../components/Card";
 
 class Search extends Component {
   state = {
     search: "",
-    breeds: [],
     results: [],
     employees: [],
+    filtered: [],
     error: ""
   };
 
@@ -21,37 +19,38 @@ class Search extends Component {
       .then(res => {
         console.log(res.data.results)
         this.setState({ employees: res.data.results})
+        this.setState({ filtered: res.data.results})
       })
       .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
-    this.setState({ search: event.target.value });
+
+    if(event) {
+      const filter = event.target.value;
+      const filteredList = this.state.employees.filter(item => {
+        let values = item.name.first.toLowerCase();
+        return values.indexOf(filter.toLowerCase()) !== -1;
+      });
+  //console.log("filtered list = " + filteredList)
+  
+      this.setState({filtered: filteredList});
+      console.log(this.state.filtered);
+    }
+    else {
+      this.setState({filtered: this.state.employees});
+//      this.state.filtered = this.state.employees;
+    }
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    // API.getDogsOfBreed(this.state.search)
-    //   .then(res => {
-    //     if (res.data.status === "error") {
-    //       throw new Error(res.data.message);
-    //     }
-    //     this.setState({ results: res.data.message, error: "" });
-    //   })
-    //   .catch(err => this.setState({ error: err.message }));
-  };
   render() {
-    // console.log(this.state.breeds);
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
           <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            // breeds={this.state.breeds}
           />
-          <Card results={this.state.employees} />
-
+          <Card results={this.state.filtered} />
         </Container>
       </div>
     );

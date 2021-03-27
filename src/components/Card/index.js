@@ -12,7 +12,6 @@ function Card(props) {
             <th>Last Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>DOB</th>
             <th>City</th>
             <th>Country</th>
           </tr>
@@ -24,7 +23,6 @@ function Card(props) {
             <td><p>{result.name.first}  </p></td>
             <td><p>{result.name.last}   </p></td>
             <td><p>{result.email}   </p></td>
-            <td><p>{result.dob.date}</p></td>
             <td><p>{result.location.city}</p></td>
             <td><p>{result.location.country}</p></td>
           </tr>
