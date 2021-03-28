@@ -1,6 +1,7 @@
 .footer {
   min-height: 100px;
   background: #E5E5E5;
+  background-color: #c3e6cb;
   position: relative;
 }
 
@@ -11,4 +12,11 @@
   right: 0;
   padding: 3px;
   background: #B8B8B8;
+  background-color: #c3e6cb;
+}
+
+/* styling for the footer */
+.myFooter {
+  padding: 5px 0;
+  margin: 0;
 }
