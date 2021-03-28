@@ -3,6 +3,7 @@ import "./style.css";
 
 function Card(props) {
   return (
+    
         <table className="table table-curved table-responsive">
           <thead>
             <tr>
