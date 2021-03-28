@@ -1,4 +1,7 @@
 .jumbotron {
-    background-color: #1a7062 !important;
+    /* background-color: #4082c4 !important; */
+    background-color: #3979b9 !important;
     color: white;
+    margin-bottom: 0 !important;
+    padding: 1rem 1rem;
 }

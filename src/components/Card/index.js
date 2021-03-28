@@ -3,8 +3,8 @@ import "./style.css";
 
 function Card(props) {
   return (
-    
-        <table className="table table-curved table-responsive">
+    <div className=" justify-content-center">
+        <table className="table mx-auto w-auto table-curved table-responsive">
           <thead>
             <tr>
               <th className="alignCenter">Pic</th>
@@ -27,6 +27,7 @@ function Card(props) {
           ))}
           </tbody>
         </table>
+    </div>
   )
 }
 export default Card;
