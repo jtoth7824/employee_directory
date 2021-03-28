@@ -8,16 +8,10 @@ import Card from "../components/Card";
 class Search extends Component {
   state = {
     search: "",
-    results: [],
     employees: [],
     filtered: [],
     error: "",
-    sortDir: {
-      first: "asc",
-      last: "asc",
-      phone: "asc",
-      email: "asc"
-    }
+    sortDir: "asc"
   };
 
   // When the component mounts, get a list of all available employees and update this.state.employees and also this.state.filtered
@@ -37,15 +31,13 @@ class Search extends Component {
 
     // check if a search term exists within input form field
     if(event) {
-      const filter = event.target.value;
+      const filter = (event.target.value).toLowerCase();
       const filteredList = this.state.employees.filter(item => {
-
-        let values = item.name.first.toLowerCase();
         // check search string exists within any of the fields and return the array value if a match
-        return (values.indexOf(filter.toLowerCase()) !== -1)
-            || (item.name.last.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
-            || (item.phone.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
-            || (item.email.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+        return (item.name.first.indexOf(filter) !== -1)
+            || (item.name.last.toLowerCase().indexOf(filter) !== -1)
+            || (item.phone.toLowerCase().indexOf(filter) !== -1)
+            || (item.email.toLowerCase().indexOf(filter) !== -1);
       });
 
       // set filtered array state to be the new filtered list
@@ -63,17 +55,46 @@ class Search extends Component {
     var sortList;
     // check if sorting by first or last name
     if((field === "first") || (field ==="last")) {
+      // check if ascending sortDir state
+      if(this.state.sortDir === "asc") {
       // perform sort - need this because first/last is buried below "name" not at root
       sortList = this.state.filtered.sort((a, b) => {
         return a.name[field].localeCompare(b.name[field])
       })
+      // change sortDir state to descending
+      this.setState({sortDir: "desc"});
+      }
+      else {
+      // perform sort - need this because first/last is buried below "name" not at root
+      sortList = this.state.filtered.sort((a, b) => {
+        return b.name[field].localeCompare(a.name[field])
+      })
+      // change sortDir state to ascending
+      this.setState({sortDir: "asc"});
+      }
+
     }
     else {
+      // check if ascending sortDir state
+      if(this.state.sortDir === "asc") {
       // use filtered list of employees to sort on
       sortList = this.state.filtered.sort((a, b) => {
         // compare the values of each array record for sorting based upon field name passed in
         return a[field].localeCompare(b[field])
       })
+      // change sortDir state to descending
+      this.setState({sortDir: "desc"});
+      }
+      else {
+      // use filtered list of employees to sort on
+      sortList = this.state.filtered.sort((a, b) => {
+        // compare the values of each array record for sorting based upon field name passed in
+        return b[field].localeCompare(a[field])
+      })
+      // change sortDir state to ascending
+      this.setState({sortDir: "asc"});
+      }
+
     }
     // update the state variable filtered with new sorted list
     this.setState({filtered: sortList});
