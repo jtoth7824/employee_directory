@@ -3,9 +3,6 @@ import "./style.css";
 
 function Card(props) {
   return (
-//    props.results.map(result => (
-//      <div className="row">
-//   <div className="card">
         <table className="table table-curved table-responsive">
           <thead>
             <tr>
@@ -16,23 +13,19 @@ function Card(props) {
               <th className="alignCenter"><span onClick={() => props.sortField("phone")}>Phone</span></th>
             </tr>
           </thead>
+          <tbody >
           {props.results.map(result => (
-          <tbody key={result.cell}>
-
-
-            <tr className="blue">
+            <tr key={result.cell}>
               <td className="align-middle text-center"><img src={result.picture.medium} alt="employee pic"/></td>
               <td className="align-middle text-center"><p>{result.name.first}</p></td>
               <td className="align-middle text-center"><p>{result.name.last}</p></td>
               <td className="align-middle text-center"><p>{result.email}</p></td>
               <td className="align-middle text-center"><p>{result.phone}</p></td>
             </tr>
-          </tbody>
+
           ))}
+          </tbody>
         </table>
-//      </div>
-// </div>
-//    ))
   )
 }
 export default Card;
