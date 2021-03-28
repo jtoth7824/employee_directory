@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import Container from "../components/Container";
-import SearchForm from "../components/SearchForm";
-import Card from "../components/Card";
+import API from "../../utils/API";
+import Container from "../Container";
+import SearchForm from "../SearchForm";
+import Card from "../Card";
 
 // set up stateful values
 class Search extends Component {

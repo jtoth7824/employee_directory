@@ -45,6 +45,11 @@ td {
   color: white;
 }
 
+.table-curved th:hover span {
+  background-color: rgb(9, 102, 9);
+  color: white;
+}
+
 img {
   border-radius: 50%;
 }
