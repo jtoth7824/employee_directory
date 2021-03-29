@@ -18,28 +18,28 @@ This application utilizes a no-sql database along with an IndexedDb (while in of
 The following is a screenshot of the Employee Directory.
 
 <p align="center">
-  <img src="./public/assets/images/EmployeeDirectory.png" alt="Employee Directory application home screen">
+  <img src="./public/images/EmployeeDirectory.png" alt="Employee Directory application home screen">
 </p>
 
 #### Employee Directory filtered
 The following is a screenshot of the Employee Directory after a search is performed.
 
 <p align="center">
-  <img src="./public/assets/images/EmployeeDirFiltered.png" alt="employee directory filterd">
+  <img src="./public/images/EmployeeDirFiltered.png" alt="employee directory filterd">
 </p>
 
 #### Employee Directory Sorted (Ascending)
 The following is a screenshot of the Employee Directory after an ascending sort is performed.
 
 <p align="center">
-  <img src="./public/assets/images/EmployeeDirSortAsc.png" alt="employee directory sort ascending">
+  <img src="./public/images/EmployeeDirSortAsc.png" alt="employee directory sort ascending">
 </p>
 
 #### Employee Directory Sorted (Descending)
 The following is a screenshot of the Employee Directory after a descending sort is performed.
 
 <p align="center">
-  <img src="./public/assets/images/EmployeeDirSortDesc.png" alt="employee directory sort descending">
+  <img src="./public/images/EmployeeDirSortDesc.png" alt="employee directory sort descending">
 </p>
 
 ## Installation
@@ -53,7 +53,7 @@ The following is a screenshot of the Employee Directory after a descending sort 
 
 ## Usage
 
-This application requires Node.js to be installed.  It also requires the user to have 'mongoose', 'morgan', 'compression', 'lite-server' and 'express packages installed.  (See [Installation](#installation) section.)  Once these items have been installed, the user can launch the application from a terminal window as follows:
+This application requires Node.js to be installed.  (See [Installation](#installation) section.)  Once these items have been installed, the user can launch the application from a terminal window as follows:
 
 **npm start**
 
@@ -62,8 +62,6 @@ The application can alternatively be run as a deployed application following the
 ## Technologies
 
 * React
-* Express
-* Node.js
 * Github pages
 
 ## Repository
