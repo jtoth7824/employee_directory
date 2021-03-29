@@ -41,13 +41,11 @@ td {
   border-radius: 0 30px 30px 0;
 }
 .table-curved tr:hover td {
-/*  background-color: rgb(9, 102, 9);*/
   background-color: #3979b9;
   color: white;
 }
 
 .table-curved th:hover span {
-  /* background-color: rgb(9, 102, 9); */
   background-color: #3979b9;
   color: white;
 }
@@ -57,7 +55,6 @@ img {
 }
 
 tr:nth-child(even) {
-  /* background-color: #c3e6cb; */
   background-color: #85b8eb;
   border-radius: 30px 30px 30px 30px;
 }

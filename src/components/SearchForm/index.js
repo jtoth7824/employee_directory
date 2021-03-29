@@ -4,7 +4,7 @@ import "./style.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
-    <div className="container">
+    // <div className="container">
     <form className="searchForm justify-content-center form-inline m-2">
         <input
           value={props.searchString}
@@ -18,7 +18,7 @@ function SearchForm(props) {
           }}
         />
     </form>
-    </div>
+    // </div>
   );
 }
 

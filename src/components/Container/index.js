@@ -4,7 +4,7 @@ function Container(props) {
   return (
     <div className="row justify-content-center">
     <div className="col-10 text-center">
-      <div className="container-fluid" style={props.style}>{props.children}</div>      
+      <div style={props.style}>{props.children}</div>      
     </div>
     </div>
   );

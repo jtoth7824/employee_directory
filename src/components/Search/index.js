@@ -31,13 +31,18 @@ class Search extends Component {
 
     // check if a search term exists within input form field
     if(event) {
-      const filter = (event.target.value).toLowerCase();
+      var filter = (event.target.value).toLowerCase();
+
       const filteredList = this.state.employees.filter(item => {
         // check search string exists within any of the fields and return the array value if a match
-        return (item.name.first.indexOf(filter) !== -1)
+        return (item.name.first.toLowerCase().indexOf(filter) !== -1)
             || (item.name.last.toLowerCase().indexOf(filter) !== -1)
             || (item.phone.toLowerCase().indexOf(filter) !== -1)
-            || (item.email.toLowerCase().indexOf(filter) !== -1);
+            // || (item.email.toLowerCase().indexOf(filter) !== -1)
+            || (item.location.street.number.toString().indexOf(filter) !== -1)
+            || (item.location.street.name.toLowerCase().indexOf(filter) !== -1)
+            || (item.location.city.toLowerCase().indexOf(filter) !== -1)
+            || (item.location.state.toLowerCase().indexOf(filter) !== -1);
       });
 
       // set filtered array state to be the new filtered list
@@ -74,6 +79,34 @@ class Search extends Component {
       }
 
     }
+    else if((field === "street")) {
+      if(this.state.sortDir === "asc") {
+        sortList = this.state.filtered.sort((a, b) => {
+          return a.location[field].name.localeCompare(b.location[field].name)
+        })
+        this.setState({sortDir: "desc"});
+      }
+      else {
+        sortList = this.state.filtered.sort((a, b) => {
+          return b.location[field].name.localeCompare(a.location[field].name)
+        })
+        this.setState({sortDir: "asc"});
+      }
+    }
+    else if((field === "city") || (field === "state")) {
+      if(this.state.sortDir === "asc") {
+        sortList = this.state.filtered.sort((a,b) => {
+          return a.location[field].localeCompare(b.location[field])
+        })
+        this.setState({sortDir: "desc"});
+      }
+      else {
+        sortList = this.state.filtered.sort((a, b) => {
+          return b.location[field].localeCompare(a.location[field]);
+        });
+        this.setState({sortDir: "asc"});
+      }
+    }
     else {
       // check if ascending sortDir state
       if(this.state.sortDir === "asc") {
@@ -102,7 +135,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <Container style={{ minHeight: "80%" }}>
           <SearchForm
             handleInputChange={this.handleInputChange}
