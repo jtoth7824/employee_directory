@@ -65,7 +65,7 @@ Direct link to repository:  https://github.com/jtoth7824/employee_directory
 
 ## Deployment
 
-The Workout Tracker application was deployed to Github Pages so that anyone can run the application.   The link to execute the application is as follows:
+The Employee Directory application was deployed to Github Pages so that anyone can run the application.   The link to execute the application is as follows:
 
 https://jtoth7824.github.io/employee_directory
 
