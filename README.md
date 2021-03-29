@@ -1,10 +1,8 @@
 # employee_directory
 
-The Budget Tracker is an application to allow a user to track their expenses both in an online and offline capacity.  A user enters a name for the transaction along with an amount.  The user then clicks a button to either add or subtract that value as the transaction amount.  The new balance is displayed and a graph charting the transactions is displayed.
+The Employee Directory is an application that displays a list of employee information and permits the user to search on any field displayed (first/last name, address, city, state, phone number).  The user is also able to click any of the column names in the employee directory and the table is sorted in ascending or descending order by that column name.  Click the same column name again reverses the sort order.  The employee directory is refreshed with a new list of employees every time the page is reloaded.  As the user types a search term and the list is filtered, clicking a column name will sort the resulting data set.
 
-As the user utilizes the application while connected to internet, the entries are stored in a mongo Atlas database.  If the user loses the internet connection and goes offline, then any transactions continued to be made on the page are then stored instead in an IndexedDb for the browser.   Upon reconnection to the internet, the entries made while offline are then copied to the Atlas database and the IndexedDb is cleared.
-
-This application utilizes a no-sql database along with an IndexedDb (while in offline mode).  The application is also a progressive web application (PWA) that incorporated a manifest file and a service worker.  The application has been deployed to Heroku and connected to a mongo Atlas database.
+This application was built using React and utilizes component state.  The employee data is retrieved from a 3rd party API (randomuser.me)  The application was deployed to Github pages..
 
 ## Table of Contents
 * [Screenshots](#Screenshots)
@@ -37,29 +35,29 @@ The following is a screenshot of the Employee Directory after a descending sort 
 
 ## Installation
 
-* Install node.js to computer, if not already present.
-    * Node.js can be installed from [here](https://nodejs.org/en/)
-* Copy all the application files locally to one's machine.
-* In a terminal window where you copied the files, install 'react'.    These installations are accomplished by performing the following command: 
-
+* Fork or clone the repo.
+* Make sure to install all the depedencies by running the following command:
     * **npm install**
 
 ## Usage
 
-This application requires Node.js to be installed.  (See [Installation](#installation) section.)  Once these items have been installed, the user can launch the application from a terminal window as follows:
+To use this application once installed, the user launches the application from a terminal window as follows:
 
 **npm start**
+
+This will then open a browser window at localhost:3000.
 
 The application can alternatively be run as a deployed application following the link in the Deployment section.
 
 ## Technologies
 
 * React
-* react-dom
-* react-scripts
 * axios
 * Github pages
 * Bootstrap
+* HTML
+* CSS
+* Javascript
 
 ## Repository
 
