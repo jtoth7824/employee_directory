@@ -14,29 +14,22 @@ This application utilizes a no-sql database along with an IndexedDb (while in of
 * [Repository](#Repository)
 * [Deployment](#Deployment)
 
-#### Home Page
-The following is a screenshot of the Employee Directory.
-
-<p align="center">
-  <img src="./public/images/EmployeeDirectory.png" alt="Employee Directory application home screen">
-</p>
-
 #### Employee Directory filtered
 The following is a screenshot of the Employee Directory after a search is performed.
 
 <p align="center">
-  <img src="./public/images/EmployeeDirFiltered.png" alt="employee directory filterd">
+  <img src="./public/images/EmployeeDirectoryFiltered.png" alt="employee directory filterd">
 </p>
 
 #### Employee Directory Sorted (Ascending)
-The following is a screenshot of the Employee Directory after an ascending sort is performed.
+The following is a screenshot of the Employee Directory after an ascending sort is performed on Last Name.
 
 <p align="center">
   <img src="./public/images/EmployeeDirSortAsc.png" alt="employee directory sort ascending">
 </p>
 
 #### Employee Directory Sorted (Descending)
-The following is a screenshot of the Employee Directory after a descending sort is performed.
+The following is a screenshot of the Employee Directory after a descending sort is performed on City.
 
 <p align="center">
   <img src="./public/images/EmployeeDirSortDesc.png" alt="employee directory sort descending">
@@ -62,7 +55,11 @@ The application can alternatively be run as a deployed application following the
 ## Technologies
 
 * React
+* react-dom
+* react-scripts
+* axios
 * Github pages
+* Bootstrap
 
 ## Repository
 
