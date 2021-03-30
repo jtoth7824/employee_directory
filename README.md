@@ -1,8 +1,8 @@
 # employee_directory
 
-The Employee Directory is an application that displays a list of employee information and permits the user to search on any field displayed (first/last name, address, city, state, phone number).  The user is also able to click any of the column names in the employee directory and the table is sorted in ascending or descending order by that column name.  Click the same column name again reverses the sort order.  The employee directory is refreshed with a new list of employees every time the page is reloaded.  As the user types a search term and the list is filtered, clicking a column name will sort the resulting data set.
+The Employee Directory is an application that displays a list of employees' information and permits the user to search on any field displayed (first/last name, address, city, state, phone number).  The user is also able to click any of the column names in the employee directory and the table is sorted in ascending or descending order by that column name.  Click the same column name again reverses the sort order.  The employee directory is refreshed with a new list of employees every time the page is reloaded.  As the user types a search term and the list is filtered, clicking a column name will sort the resulting data set.
 
-This application was built using React and utilizes component state.  The employee data is retrieved from a 3rd party API (randomuser.me)  The application was deployed to Github pages..
+This application was built using React and utilizes component state.  The employee data (100 users) is retrieved from a 3rd party API (randomuser.me)  The application was deployed to Github pages..
 
 ## Table of Contents
 * [Screenshots](#Screenshots)
@@ -36,7 +36,7 @@ The following is a screenshot of the Employee Directory after a descending sort 
 ## Installation
 
 * Fork or clone the repo.
-* Make sure to install all the depedencies by running the following command:
+* Make sure to install all the dependencies by running the following command:
     * **npm install**
 
 ## Usage
